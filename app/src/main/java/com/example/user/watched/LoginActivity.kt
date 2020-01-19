@@ -304,8 +304,20 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
          */
         private val DUMMY_CREDENTIALS = arrayOf("foo@example.com:hello", "bar@example.com:world")
     }
-    
+
     fun ooNewDeneme(a: Int): Boolean{
         return true
+    }
+
+    fun ooNewDeneme2(b: String): Int{
+        if(b == "aaa"){
+            return 1
+        }
+        else if(b == "bbb"){
+            return 3
+        }
+        else{
+            return 2
+        }
     }
 }
