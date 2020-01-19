@@ -316,8 +316,13 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
         else if(b == "bbb"){
             return 3
         }
-        else{
-            return 2
+        else {
+
+            when (b) {
+                "kkk" -> return 16
+                "hhh" -> return "5".toInt()
+                else -> return 0
+            }
         }
     }
 }
