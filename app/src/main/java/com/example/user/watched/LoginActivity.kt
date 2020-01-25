@@ -325,4 +325,8 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
             }
         }
     }
+
+    fun ooNewDeneme3(a: Int, b: String): Int{
+        return 1
+    }
 }
