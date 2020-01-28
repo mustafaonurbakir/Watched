@@ -1,14 +1,14 @@
 package com.example.kolindeneme.database.entities
 
-import androidx.annotation.NonNull
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.Index
-import androidx.room.PrimaryKey
+import android.arch.persistence.room.ColumnInfo
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.Index
+import android.arch.persistence.room.PrimaryKey
+import android.support.annotation.NonNull
 import com.example.kolindeneme.database.entities.DeviceEntity.Companion.TABLE_NAME
 
 
-@Entity(tableName = TABLE_NAME, indices = { @Index(value = { "uuid" }, unique = true) })
+@Entity(tableName = TABLE_NAME, indices = arrayOf(Index(value = arrayOf("uuid"), unique = true)))
 class DeviceEntity(
     @param:NonNull @field:NonNull
     @field:ColumnInfo(name = "name")
@@ -92,6 +92,6 @@ class DeviceEntity(
 
     companion object {
 
-        val TABLE_NAME = "device"
+        const val TABLE_NAME = "device"
     }
 }

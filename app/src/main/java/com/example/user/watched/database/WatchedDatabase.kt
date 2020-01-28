@@ -9,7 +9,7 @@ import com.example.kolindeneme.database.entities.DeviceEntity
 
 
 @Database(
-    entities = { DeviceEntity.class },
+    entities = arrayOf( DeviceEntity::class ),
     version = 1
 )
 abstract class WatchedDatabase : RoomDatabase() {

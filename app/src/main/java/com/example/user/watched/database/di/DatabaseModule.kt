@@ -5,9 +5,12 @@ import com.example.kolindeneme.database.dao.DeviceDAO
 import com.example.user.watched.database.interactors.DatabaseInteractorBindingModule
 
 import com.smarthome.core.main.database.WatchedDatabase
+import dagger.Module
+import dagger.Provides
+import javax.inject.Singleton
 
 
-@Module(includes = { DatabaseInteractorBindingModule.class })
+@Module(includes = arrayOf(DatabaseInteractorBindingModule::class ))
 class DatabaseModule {
 
     @Provides
