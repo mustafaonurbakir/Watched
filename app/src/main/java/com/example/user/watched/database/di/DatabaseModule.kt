@@ -1,8 +1,9 @@
 package com.example.kolindeneme.database.di
 
-import androidx.annotation.NonNull
+import android.support.annotation.NonNull
 import com.example.kolindeneme.database.dao.DeviceDAO
-import com.example.kolindeneme.database.interactors.DatabaseInteractorBindingModule
+import com.example.user.watched.database.interactors.DatabaseInteractorBindingModule
+
 import com.smarthome.core.main.database.WatchedDatabase
 
 
