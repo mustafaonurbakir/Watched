@@ -5,29 +5,29 @@ import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.OnConflictStrategy
 import android.arch.persistence.room.Query
-import com.example.kolindeneme.database.entities.DeviceEntity
-import com.example.kolindeneme.database.entities.DeviceEntity.Companion.TABLE_NAME
+import com.example.kolindeneme.database.entities.MoviesEntity
+import com.example.kolindeneme.database.entities.MoviesEntity.Companion.TABLE_NAME
 import io.reactivex.Flowable
 import io.reactivex.Single
 
 @Dao
-interface DeviceDAO {
+interface MoviesDAO {
 
     @get:Query("SELECT * FROM $TABLE_NAME")
-    val allDevices: Flowable<List<DeviceEntity>>
+    val allMovies: Flowable<List<MoviesEntity>>
 
-    @Query("SELECT * FROM $TABLE_NAME WHERE uuid=:uuid")
-    fun getDevice(uuid: String): Single<DeviceEntity>
+    @Query("SELECT * FROM $TABLE_NAME WHERE name=:name")
+    fun getDevice(name: String): Single<MoviesEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertDevice(device: DeviceEntity)
+    fun insertDevice(movies: MoviesEntity)
 
-    @Query("DELETE FROM $TABLE_NAME WHERE uuid=:uuid")
+/*    @Query("DELETE FROM $TABLE_NAME WHERE uuid=:uuid")
     fun removeDevice(uuid: String)
 
     @Query("DELETE FROM $TABLE_NAME")
     fun deleteAllDevices()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAllDevices(map: List<DeviceEntity>)
+    fun insertAllDevices(map: List<MoviesEntity>)*/
 }

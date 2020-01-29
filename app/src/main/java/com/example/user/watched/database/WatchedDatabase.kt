@@ -4,17 +4,17 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
-import com.example.kolindeneme.database.dao.DeviceDAO
-import com.example.kolindeneme.database.entities.DeviceEntity
+import com.example.kolindeneme.database.dao.MoviesDAO
+import com.example.kolindeneme.database.entities.MoviesEntity
 
 
 @Database(
-    entities = arrayOf( DeviceEntity::class ),
+    entities = arrayOf( MoviesEntity::class ),
     version = 1
 )
 abstract class WatchedDatabase : RoomDatabase() {
 
-    abstract fun deviceDAO(): DeviceDAO
+    abstract fun moviesDAO(): MoviesDAO
 
     companion object {
 
