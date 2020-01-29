@@ -17,7 +17,7 @@ interface MoviesDAO {
     val allMovies: Flowable<List<MoviesEntity>>
 
     @Query("SELECT * FROM $TABLE_NAME WHERE name=:name")
-    fun getDevice(name: String): Single<MoviesEntity>
+    fun getMovie(name: String): Single<MoviesEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertDevice(movies: MoviesEntity)
