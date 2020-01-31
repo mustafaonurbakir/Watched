@@ -2,7 +2,7 @@ package com.example.user.watched.database.interactors
 
 import android.support.annotation.WorkerThread
 
-import com.example.kolindeneme.database.dao.MoviesDAO
+import com.example.user.watched.database.dao.MoviesDAO
 import com.example.user.watched.database.interactors.mapper.MoviesEntityToMovieItemDomainMapper
 import com.example.user.watched.database.interactors.mapper.MoviesEntityToMovieListDomainMapper
 import com.example.user.watched.pages.dashboard.domain.MoviesDomain

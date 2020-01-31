@@ -1,11 +1,11 @@
-package com.smarthome.core.main.database
+package com.example.user.watched.database
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
-import com.example.kolindeneme.database.dao.MoviesDAO
-import com.example.kolindeneme.database.entities.MoviesEntity
+import com.example.user.watched.database.dao.MoviesDAO
+import com.example.user.watched.database.entities.MoviesEntity
 
 
 @Database(
