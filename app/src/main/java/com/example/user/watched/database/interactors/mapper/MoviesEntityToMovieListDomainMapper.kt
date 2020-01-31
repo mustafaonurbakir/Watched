@@ -1,7 +1,7 @@
 package com.example.user.watched.database.interactors.mapper
 
 
-import com.example.kolindeneme.database.entities.MoviesEntity
+import com.example.user.watched.database.entities.MoviesEntity
 import com.example.user.watched.pages.dashboard.domain.MoviesDomain
 
 import java.util.ArrayList
