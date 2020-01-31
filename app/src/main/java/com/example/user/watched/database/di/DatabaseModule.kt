@@ -1,10 +1,10 @@
-package com.example.kolindeneme.database.di
+package com.example.user.watched.database.di
 
 import android.support.annotation.NonNull
-import com.example.kolindeneme.database.dao.MoviesDAO
+import com.example.user.watched.database.WatchedDatabase
+import com.example.user.watched.database.dao.MoviesDAO
 import com.example.user.watched.database.interactors.DatabaseInteractorBindingModule
 
-import com.smarthome.core.main.database.WatchedDatabase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
