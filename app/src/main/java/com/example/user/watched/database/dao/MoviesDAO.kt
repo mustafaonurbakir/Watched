@@ -16,18 +16,10 @@ interface MoviesDAO {
     @get:Query("SELECT * FROM $TABLE_NAME")
     val allMovies: Flowable<List<MoviesEntity>>
 
-    @Query("SELECT * FROM $TABLE_NAME WHERE name=:name")
-    fun getMovie(name: String): Single<MoviesEntity>
+    @Query("SELECT * FROM $TABLE_NAME WHERE :movieName")
+    fun getMovie(movieName: String): Single<MoviesEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertDevice(movies: MoviesEntity)
 
-/*    @Query("DELETE FROM $TABLE_NAME WHERE uuid=:uuid")
-    fun removeDevice(uuid: String)
-
-    @Query("DELETE FROM $TABLE_NAME")
-    fun deleteAllDevices()
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAllDevices(map: List<MoviesEntity>)*/
 }
