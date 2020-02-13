@@ -6,6 +6,12 @@ interface DashboardContract {
     }
 
     interface Presenter {
+
+        fun onCreate()
+
+        fun bind()
+
+        fun unBind()
     }
 
 }
