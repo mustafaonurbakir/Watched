@@ -43,7 +43,7 @@ abstract class BaseFragment : Fragment() {
         activity = null
     }
 
-    override fun getView(): View {
+    override fun getView(): View? {
         return super.getView()
     }
 }
