@@ -5,6 +5,7 @@ import android.support.annotation.WorkerThread
 import com.example.user.watched.database.dao.MoviesDAO
 import com.example.user.watched.database.interactors.mapper.MoviesEntityToMovieItemDomainMapper
 import com.example.user.watched.database.interactors.mapper.MoviesEntityToMovieListDomainMapper
+import com.example.user.watched.pages.dashboard.api.MoviesInteractor
 import com.example.user.watched.pages.dashboard.domain.MoviesDomain
 
 import javax.inject.Inject
@@ -23,7 +24,7 @@ internal constructor(
     override val moviesList: Flowable<List<MoviesDomain>>
         get() = moviesDAO.allMovies.map(moviesEntityToMovieListDomainMapper)
 
-    override fun getMovie(uuid: String): Single<MoviesDomain> {
-        return moviesDAO.getMovie(uuid).map(moviesEntityToMovieItemDomainMapper)
+    override fun getMovie(name: String): Single<MoviesDomain> {
+        return moviesDAO.getMovie(name).map(moviesEntityToMovieItemDomainMapper)
     }
 }

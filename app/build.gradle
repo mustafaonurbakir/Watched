@@ -43,6 +43,7 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
     implementation "com.google.dagger:dagger:$daggerVersion"
+    //noinspection OutdatedLibrary
     implementation "com.google.dagger:dagger-android:$daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
 }
