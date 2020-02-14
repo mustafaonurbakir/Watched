@@ -9,38 +9,25 @@ import com.example.user.watched.database.entities.MoviesEntity.Companion.TABLE_N
 
 
 @Entity(tableName = TABLE_NAME, indices = arrayOf(Index(value = arrayOf("movieName"), unique = true)))
-class MoviesEntity(
+data class MoviesEntity(
 
-    @param:NonNull
-    @field:NonNull
     @field:ColumnInfo(name = "movieName")
-    @get:NonNull
     var name: String,
 
-    @field:NonNull
     @field:ColumnInfo(name = "directory")
-    @get:NonNull
     var directory: String,
 
-    @param:NonNull
-    @field:NonNull
     @field:ColumnInfo(name = "star")
-    @get:NonNull
     var star: String,
 
-    @param:NonNull
-    @field:NonNull
     @field:ColumnInfo(name = "score")
-    @get:NonNull
     var score: Int
 
 ) {
 
-
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    @get:NonNull
-    var id: Long = 0
+    var id: Int = 0
 
     companion object {
         const val TABLE_NAME = "movies"
