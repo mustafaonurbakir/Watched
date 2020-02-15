@@ -10,7 +10,7 @@ import dagger.Provides
 import javax.inject.Singleton
 
 
-@Module(includes = arrayOf(DatabaseInteractorBindingModule::class ))
+@Module(includes = [DatabaseInteractorBindingModule::class ])
 class DatabaseModule {
 
     @Provides

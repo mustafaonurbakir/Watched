@@ -8,8 +8,12 @@ import android.support.annotation.NonNull
 import com.example.user.watched.database.entities.MoviesEntity.Companion.TABLE_NAME
 
 
-@Entity(tableName = TABLE_NAME, indices = arrayOf(Index(value = arrayOf("movieName"), unique = true)))
-data class MoviesEntity(
+@Entity(tableName = TABLE_NAME, indices = [Index(value = arrayOf("movieName"), unique = true)])
+class MoviesEntity(
+
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "ID")
+    var Id: Long = 0,
 
     @field:ColumnInfo(name = "movieName")
     var name: String,
@@ -25,9 +29,6 @@ data class MoviesEntity(
 
 ) {
 
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
-    var id: Int = 0
 
     companion object {
         const val TABLE_NAME = "movies"

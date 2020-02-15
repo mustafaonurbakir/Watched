@@ -22,4 +22,9 @@ interface MoviesDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertDevice(movies: MoviesEntity)
 
+/*    @Query("DELETE FROM $TABLE_NAME WHERE aa=:aa")
+    fun removeMovie(aa: String)
+
+    @Query("DELETE FROM $TABLE_NAME")
+    fun deleteAllMovies()*/
 }
