@@ -1,18 +1,14 @@
 package com.example.user.watched.di
 
 import dagger.Component
-import dagger.android.AndroidInjectionModule
-import dagger.android.support.AndroidSupportInjectionModule
 
 import javax.inject.Singleton
 
+
 @Component(
-    modules = arrayOf(
+    modules = [
         AppModule::class,
-        ContributeModule::class,
-        AndroidInjectionModule::class,
-        AndroidSupportInjectionModule::class
-    )
+        ContributeModule::class]
 )
 @Singleton
 interface AppComponent : BaseAppComponent {
