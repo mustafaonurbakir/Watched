@@ -10,9 +10,9 @@ import javax.inject.Inject
 
 class DashboardFragment : BaseFragment(), DashboardContract.View {
 
-    @Inject
-    internal var presenter: DashboardContract.Presenter? = null
 
+    var presenter: DashboardContract.Presenter? = null
+    @Inject set
 
     override val contentViewID: Int
         get() = R.layout.activity_main
@@ -36,7 +36,6 @@ class DashboardFragment : BaseFragment(), DashboardContract.View {
 
     companion object {
 
-        private val UNKNOWN_ITEM = -1
     }
 
 }

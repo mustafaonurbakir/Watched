@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class DashboardPresenter @Inject
 constructor(private val view: DashboardContract.View) : DashboardContract.Presenter {
-    private val compositeDisposable: CompositeDisposable
+    var compositeDisposable: CompositeDisposable
 
     init {
         compositeDisposable = CompositeDisposable()
