@@ -3,5 +3,5 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-          class="com.example.user.watched.pages.dashboard.DashboardFragment"
+          class="com.mob.user.watched.pages.dashboard.DashboardFragment"
     android:id="@+id/fragment_dashboard" />

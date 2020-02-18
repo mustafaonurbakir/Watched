@@ -14,7 +14,7 @@ ext {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.user.watched"
+        applicationId "com.mob.user.watched"
         minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
