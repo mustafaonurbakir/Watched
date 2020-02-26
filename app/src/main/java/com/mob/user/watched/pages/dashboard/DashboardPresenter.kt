@@ -1,16 +1,14 @@
 package com.mob.user.watched.pages.dashboard
 
 
-import io.reactivex.disposables.CompositeDisposable
-
 import javax.inject.Inject
 
 class DashboardPresenter @Inject
 constructor(private val view: DashboardContract.View) : DashboardContract.Presenter {
-    var compositeDisposable: CompositeDisposable
+    //var compositeDisposable: CompositeDisposable
 
     init {
-        compositeDisposable = CompositeDisposable()
+         //compositeDisposable = CompositeDisposable()
     }
 
     override fun onCreate() {
@@ -18,11 +16,11 @@ constructor(private val view: DashboardContract.View) : DashboardContract.Presen
     }
 
     override fun bind() {
-
+        var year = 2019
     }
 
     override fun unBind() {
-        compositeDisposable.clear()
+        //compositeDisposable.clear()
     }
 
 }

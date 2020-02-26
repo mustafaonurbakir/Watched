@@ -10,18 +10,18 @@ import javax.inject.Inject
 
 class DashboardFragment : BaseFragment(), DashboardContract.View {
 
-
-    var presenter: DashboardContract.Presenter? = null
-    @Inject set
+    @Inject
+    lateinit var presenter: DashboardContract.Presenter
+    //@Inject set
 
     override val contentViewID: Int
         get() = R.layout.activity_main
 
     override fun initView(savedInstanceState: Bundle?) {
         //ButterKnife.bind(this, getView());
-        AndroidSupportInjection.inject(this)
+/*        AndroidSupportInjection.inject(this)
 
-        presenter!!.onCreate()
+        presenter!!.onCreate()*/
     }
 
     override fun onStart() {

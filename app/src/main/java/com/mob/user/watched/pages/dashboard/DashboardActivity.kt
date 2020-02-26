@@ -1,5 +1,6 @@
 package com.mob.user.watched.pages.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import com.mob.user.watched.R
 import com.mob.user.watched.core.base.BaseActivity
@@ -20,5 +21,11 @@ class DashboardActivity : BaseActivity() {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);*/
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        val fragment = supportFragmentManager.findFragmentById(R.id.fragment_dashboard)
+        fragment?.onActivityResult(requestCode, resultCode, data)
     }
 }
