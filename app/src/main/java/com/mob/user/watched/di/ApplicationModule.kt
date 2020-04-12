@@ -10,14 +10,13 @@ import io.reactivex.annotations.NonNull
 import javax.inject.Singleton
 
 @Module
-class ApplicationModule (private val watchedApplication: WatchedApplication) {
+class ApplicationModule  {
 
     @Provides
     @Singleton
-    @NonNull
     @PerApplication
-    fun provideApplication(): Application {
-        return watchedApplication
+    fun provideContext(application: Application): Context {
+        return application
     }
 
 }
