@@ -6,11 +6,6 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
-ext {
-    roomVersion = '1.1.1'
-    archLifecycleVersion = '1.1.1'
-}
-
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -20,7 +15,6 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -29,48 +23,52 @@ android {
         }
     }
 }
-def roomVersion = '1.1.1'
-def archLifecycleVersion = '1.1.1'
+
+ext {
+    roomVersion = '1.1.1'
+    archLifecycleVersion = '1.1.1'
+    roomVersion = '1.1.1'
+    dagger2_version = "2.22"
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    //junit
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    //rx
     implementation 'android.arch.persistence.room:rxjava2:1.1.1'
+    implementation("io.reactivex.rxjava2:rxkotlin:2.4.0")
 
-// Room components
+    // Room components
     implementation "android.arch.persistence.room:runtime:$roomVersion"
     annotationProcessor "android.arch.persistence.room:compiler:$roomVersion"
     androidTestImplementation "android.arch.persistence.room:testing:$roomVersion"
+    kapt "android.arch.persistence.room:compiler:$roomVersion"
 
-// Lifecycle components
+    // Lifecycle components
     implementation "android.arch.lifecycle:extensions:$archLifecycleVersion"
     annotationProcessor "android.arch.lifecycle:compiler:$archLifecycleVersion"
 
-
-    implementation "android.arch.persistence.room:runtime:1.1.1"
-    kapt "android.arch.persistence.room:compiler:1.1.1"
-    implementation("io.reactivex.rxjava2:rxkotlin:2.4.0")
-
     //Dagger2
-    implementation 'com.google.dagger:dagger-android:2.22'
-    implementation 'com.google.dagger:dagger-android-support:2.22'
-    kapt 'com.google.dagger:dagger-compiler:2.22'
-
-    def dagger2_version = "2.22"
-
     implementation "com.google.dagger:dagger:$dagger2_version"
     implementation "com.google.dagger:dagger-android:$dagger2_version"
     implementation "com.google.dagger:dagger-android-support:$dagger2_version"
     kapt "com.google.dagger:dagger-compiler:$dagger2_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger2_version"
     annotationProcessor "com.google.dagger:dagger-compiler:$dagger2_version"
-    annotationProcessor "com.google.dagger:dagger-android-processor:2.11"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger2_version"
+    //annotationProcessor "com.google.dagger:dagger-android-processor:2.11"
     compileOnly 'javax.annotation:jsr250-api:1.0'
     implementation 'javax.inject:javax.inject:1'
+}
+kapt {
+    generateStubs = true
 }

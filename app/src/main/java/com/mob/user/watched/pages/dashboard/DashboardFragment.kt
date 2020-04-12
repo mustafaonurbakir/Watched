@@ -8,10 +8,10 @@ import dagger.android.support.AndroidSupportInjection
 
 import javax.inject.Inject
 
-class DashboardFragment : BaseFragment(), DashboardContract.View {
+abstract class DashboardFragment : BaseFragment(), DashboardContract.View {
 
-    @Inject
-    lateinit var presenter: DashboardContract.Presenter
+
+    abstract var presenter: DashboardContract.Presenter
     //@Inject set
 
     override val contentViewID: Int
@@ -26,7 +26,7 @@ class DashboardFragment : BaseFragment(), DashboardContract.View {
 
     override fun onStart() {
         super.onStart()
-        presenter!!.bind()
+        presenter.bind()
     }
 
     override fun onStop() {

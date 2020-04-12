@@ -1,6 +1,6 @@
 package com.mob.user.watched.pages.dashboard
 
-interface DashboardContract {
+class DashboardContract {
 
     interface View {
     }

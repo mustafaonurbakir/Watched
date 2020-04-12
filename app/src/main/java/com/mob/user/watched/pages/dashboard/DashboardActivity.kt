@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.mob.user.watched.R
 import com.mob.user.watched.core.base.BaseActivity
+import dagger.android.AndroidInjection
 
 class DashboardActivity : BaseActivity() {
 
@@ -21,6 +22,16 @@ class DashboardActivity : BaseActivity() {
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);*/
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+        injectDependency()
+        //presenter.attach(this)
+    }
+
+    private fun injectDependency() {
+/*        val activityComponent = DaggerActivityComponent.builder()
+            .activityModule(ActivityModule(this))
+            .build()*/
+
+        //activityComponent.inject(this)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
