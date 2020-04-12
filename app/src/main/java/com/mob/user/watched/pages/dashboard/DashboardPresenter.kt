@@ -1,14 +1,23 @@
 package com.mob.user.watched.pages.dashboard
 
 
-import javax.inject.Inject
-
-class DashboardPresenter @Inject
-constructor(private val view: DashboardContract.View) : DashboardContract.Presenter {
+class DashboardPresenter : DashboardContract.Presenter {
     //var compositeDisposable: CompositeDisposable
+
+    private lateinit var view: DashboardContract.View
 
     init {
          //compositeDisposable = CompositeDisposable()
+    }
+    override fun subscribe() {
+
+    }
+
+    override fun unsubscribe() {
+        //subscriptions.clear()
+    }
+    override fun attach(view: DashboardContract.View) {
+        this.view = view
     }
 
     override fun onCreate() {

@@ -4,7 +4,6 @@ package com.mob.user.watched.di
 import android.app.Application
 import com.mob.user.watched.WatchedApplication
 import com.mob.user.watched.di.ApplicationModule
-import com.mob.user.watched.database.WatchedDatabase
 import dagger.BindsInstance
 import dagger.Component
 

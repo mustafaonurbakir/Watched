@@ -5,6 +5,7 @@ import android.app.Application
 import com.mob.user.watched.di.BaseAppComponent
 import com.mob.user.watched.di.DaggerAppComponent
 import com.mob.user.watched.di.ApplicationModule
+import com.mob.user.watched.di.DaggerBaseAppComponent
 
 
 class WatchedApplication : Application(){
@@ -19,7 +20,7 @@ class WatchedApplication : Application(){
     }
 
     fun createAppComponent() {
-        component =  DaggerAppComponent.builder()
+        component =  DaggerBaseAppComponent.builder()
             .applicationModule(ApplicationModule(this))
             //.database(WatchedDatabase.getInstance(this))
             .build()
