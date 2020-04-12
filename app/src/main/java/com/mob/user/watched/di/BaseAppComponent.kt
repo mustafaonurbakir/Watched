@@ -3,14 +3,20 @@ package com.mob.user.watched.di
 
 import android.app.Application
 import com.mob.user.watched.WatchedApplication
+import com.mob.user.watched.di.ApplicationModule
 import com.mob.user.watched.database.WatchedDatabase
 import dagger.BindsInstance
+import dagger.Component
 
+@Component(modules = arrayOf(ApplicationModule::class))
 interface BaseAppComponent {
 
     fun inject(application: WatchedApplication)
-
-    interface Builder<C : BaseAppComponent, B : Builder<C, B>> {
+    /**
+     * @param <B> actual Builder class
+     * @param <C> actual Component class
+     */
+/*    interface Builder<C : BaseAppComponent, B : Builder<C, B>> {
 
         @BindsInstance
         fun application(application: Application): B
@@ -19,5 +25,5 @@ interface BaseAppComponent {
         fun database(roomDatabase: WatchedDatabase?): B
 
         fun build(): C
-    }
+    }*/
 }
