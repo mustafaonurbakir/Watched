@@ -1,6 +1,7 @@
 package com.mob.user.watched.di
 
 
+import com.mob.user.watched.database.di.DatabaseModule
 import com.mob.user.watched.pages.main.MainActivity
 import com.mob.user.watched.pages.main.MainPresenter
 import dagger.Component

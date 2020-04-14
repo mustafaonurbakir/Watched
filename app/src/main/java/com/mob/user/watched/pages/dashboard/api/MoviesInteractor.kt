@@ -10,4 +10,6 @@ interface MoviesInteractor {
 
     fun getMovie(name: String): Single<MoviesDomain>
 
+    fun setMovie(moviesDomain: MoviesDomain)
+
 }

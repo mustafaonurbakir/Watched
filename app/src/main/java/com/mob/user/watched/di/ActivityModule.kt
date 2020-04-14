@@ -1,6 +1,8 @@
 package com.mob.user.watched.di
 
 import android.app.Activity
+import com.mob.user.watched.pages.dashboard.DashboardContract
+import com.mob.user.watched.pages.dashboard.DashboardPresenter
 import com.mob.user.watched.pages.main.MainContract
 import com.mob.user.watched.pages.main.MainPresenter
 

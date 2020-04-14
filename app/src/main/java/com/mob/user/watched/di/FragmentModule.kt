@@ -10,7 +10,7 @@ import dagger.Provides
 class FragmentModule {
 
     @Provides
-    fun provideAboutPresenter(): DashboardContract.Presenter {
+    fun provideDashboardPresenter(): DashboardContract.Presenter {
         return DashboardPresenter()
     }
 

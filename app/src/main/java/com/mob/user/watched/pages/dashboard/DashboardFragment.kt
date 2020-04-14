@@ -55,12 +55,12 @@ class DashboardFragment : BaseFragment(), DashboardContract.View {
         movieList.add(MoviesDomain("ahmet","asdf","asdf"));
         movieList.add(MoviesDomain("flgdfv","asdf","asdf"));
         loadDataSuccess(movieList)
-
     }
 
     override fun onStart() {
         super.onStart()
         presenter.bind()
+        presenter.loadDataSuccess(movieList)
     }
 
     override fun onStop() {
