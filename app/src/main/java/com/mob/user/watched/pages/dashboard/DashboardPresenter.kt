@@ -1,8 +1,8 @@
 package com.mob.user.watched.pages.dashboard
 
 import com.mob.user.watched.di.ActivityModule
-import com.mob.user.watched.di.DaggerAppComponent
-import com.mob.user.watched.di.DaggerBaseAppComponent
+//import com.mob.user.watched.di.DaggerAppComponent
+//import com.mob.user.watched.di.DaggerBaseAppComponent
 import com.mob.user.watched.pages.dashboard.api.MoviesInteractor
 import com.mob.user.watched.pages.dashboard.domain.MoviesDomain
 import io.reactivex.disposables.CompositeDisposable
@@ -10,13 +10,16 @@ import javax.inject.Inject
 import javax.inject.Named
 
 
-class DashboardPresenter : DashboardContract.Presenter {
+class DashboardPresenter @Inject internal constructor (
+    moviesInteract : MoviesInteractor
+    ) : DashboardContract.Presenter {
+
     //var compositeDisposable: CompositeDisposable
 
     private lateinit var view: DashboardContract.View
 
-    @Inject
-    lateinit var moviesInteract: MoviesInteractor
+    //@Inject
+    private val moviesInteract: MoviesInteractor
 
 
 
@@ -27,7 +30,7 @@ class DashboardPresenter : DashboardContract.Presenter {
 
 
     init {
-
+        this.moviesInteract = moviesInteract
          //compositeDisposable = CompositeDisposable()
         //moviesInteractor = MoviesInteractor
     }
@@ -43,7 +46,7 @@ class DashboardPresenter : DashboardContract.Presenter {
     }
 
     override fun onCreate() {
-        //injectDependency()
+        injectDependency()
     }
 
     override fun bind() {
@@ -55,7 +58,11 @@ class DashboardPresenter : DashboardContract.Presenter {
     }
 
     override fun loadDataSuccess(moviesDomain: List<MoviesDomain>){
+        //if (moviesInteract.Is)
         moviesInteract?.setMovie(moviesDomain[0])
     }
 
+    fun injectDependency(){
+
+    }
 }
