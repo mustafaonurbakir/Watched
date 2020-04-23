@@ -4,11 +4,14 @@ package com.mob.user.watched.pages.dashboard
 import javax.inject.Inject
 
 class DashboardPresenter @Inject
-constructor(private val view: DashboardContract.View) : DashboardContract.Presenter {
+internal constructor(
+    val view: DashboardContract.View
+) : DashboardContract.Presenter {
     //var compositeDisposable: CompositeDisposable
-
+    //private var final view: DashboardContract.View ?= null
     init {
          //compositeDisposable = CompositeDisposable()
+        //this.view = view
     }
 
     override fun onCreate() {
